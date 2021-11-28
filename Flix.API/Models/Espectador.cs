@@ -19,5 +19,7 @@ namespace Flix.API.Models
         public string Telefone { get; set; }
 
         public IEnumerable<EspectadorCategoria> EspectadorCategorias { get; set; }
+
+        public IEnumerable<EspectadorFilme> EspectadoresFilmes { get; set; }
     }
 }

@@ -2,14 +2,16 @@
 using Flix.API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Flix.API.Migrations
 {
     [DbContext(typeof(FlixDataContext))]
-    partial class FlixDataContextModelSnapshot : ModelSnapshot
+    [Migration("20211128143435_init")]
+    partial class init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

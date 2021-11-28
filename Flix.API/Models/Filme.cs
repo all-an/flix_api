@@ -4,6 +4,7 @@ namespace Flix.API.Models
 {
     public class Filme
     {
+        public static int assistido = 0;
         public Filme() { }
         public Filme(int id, string nome)
         {
