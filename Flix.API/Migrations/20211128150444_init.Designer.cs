@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Flix.API.Migrations
 {
     [DbContext(typeof(FlixDataContext))]
-    [Migration("20211128143435_init")]
+    [Migration("20211128150444_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -91,50 +91,50 @@ namespace Flix.API.Migrations
                         new
                         {
                             Id = 1,
-                            Nome = "Marta",
-                            Sobrenome = "Kent",
+                            Nome = "Dennis",
+                            Sobrenome = "Ritchie",
                             Telefone = "33225555"
                         },
                         new
                         {
                             Id = 2,
-                            Nome = "Paula",
-                            Sobrenome = "Isabela",
+                            Nome = "Roberto",
+                            Sobrenome = "Ierusalimschy",
                             Telefone = "3354288"
                         },
                         new
                         {
                             Id = 3,
-                            Nome = "Laura",
-                            Sobrenome = "Antonia",
+                            Nome = "Bjarn",
+                            Sobrenome = "Straustrup",
                             Telefone = "55668899"
                         },
                         new
                         {
                             Id = 4,
-                            Nome = "Luiza",
-                            Sobrenome = "Maria",
+                            Nome = "Ada",
+                            Sobrenome = "Lovelace",
                             Telefone = "6565659"
                         },
                         new
                         {
                             Id = 5,
-                            Nome = "Lucas",
-                            Sobrenome = "Machado",
+                            Nome = "Konrad",
+                            Sobrenome = "Zuze",
                             Telefone = "565685415"
                         },
                         new
                         {
                             Id = 6,
-                            Nome = "Pedro",
-                            Sobrenome = "Alvares",
+                            Nome = "Guido",
+                            Sobrenome = "van Rossum",
                             Telefone = "456454545"
                         },
                         new
                         {
                             Id = 7,
-                            Nome = "Paulo",
-                            Sobrenome = "José",
+                            Nome = "Anders",
+                            Sobrenome = "Hejlsberg",
                             Telefone = "9874512"
                         });
                 });

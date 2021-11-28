@@ -105,37 +105,37 @@ namespace Flix.API.Migrations
             migrationBuilder.InsertData(
                 table: "Espectadores",
                 columns: new[] { "Id", "Nome", "Sobrenome", "Telefone" },
-                values: new object[] { 1, "Marta", "Kent", "33225555" });
+                values: new object[] { 1, "Dennis", "Ritchie", "33225555" });
 
             migrationBuilder.InsertData(
                 table: "Espectadores",
                 columns: new[] { "Id", "Nome", "Sobrenome", "Telefone" },
-                values: new object[] { 2, "Paula", "Isabela", "3354288" });
+                values: new object[] { 2, "Roberto", "Ierusalimschy", "3354288" });
 
             migrationBuilder.InsertData(
                 table: "Espectadores",
                 columns: new[] { "Id", "Nome", "Sobrenome", "Telefone" },
-                values: new object[] { 3, "Laura", "Antonia", "55668899" });
+                values: new object[] { 3, "Bjarn", "Straustrup", "55668899" });
 
             migrationBuilder.InsertData(
                 table: "Espectadores",
                 columns: new[] { "Id", "Nome", "Sobrenome", "Telefone" },
-                values: new object[] { 4, "Luiza", "Maria", "6565659" });
+                values: new object[] { 4, "Ada", "Lovelace", "6565659" });
 
             migrationBuilder.InsertData(
                 table: "Espectadores",
                 columns: new[] { "Id", "Nome", "Sobrenome", "Telefone" },
-                values: new object[] { 5, "Lucas", "Machado", "565685415" });
+                values: new object[] { 5, "Konrad", "Zuze", "565685415" });
 
             migrationBuilder.InsertData(
                 table: "Espectadores",
                 columns: new[] { "Id", "Nome", "Sobrenome", "Telefone" },
-                values: new object[] { 6, "Pedro", "Alvares", "456454545" });
+                values: new object[] { 6, "Guido", "van Rossum", "456454545" });
 
             migrationBuilder.InsertData(
                 table: "Espectadores",
                 columns: new[] { "Id", "Nome", "Sobrenome", "Telefone" },
-                values: new object[] { 7, "Paulo", "José", "9874512" });
+                values: new object[] { 7, "Anders", "Hejlsberg", "9874512" });
 
             migrationBuilder.InsertData(
                 table: "Filmes",

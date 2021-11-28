@@ -31,6 +31,10 @@ namespace Flix.API
                 context => context.UseSqlite(Configuration.GetConnectionString("default"))
             );
 
+            //services.AddSingleton<IRepository, Repository>();
+            //services.AddTransient<IRepository, Repository>();
+            services.AddScoped<IRepository, Repository>();
+
             services.AddControllers();
         }
 

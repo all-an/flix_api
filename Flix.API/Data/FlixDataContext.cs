@@ -45,13 +45,13 @@ namespace Flix.API.Data
             
             builder.Entity<Espectador>()
                 .HasData(new List<Espectador>(){
-                    new Espectador(1, "Marta", "Kent", "33225555"),
-                    new Espectador(2, "Paula", "Isabela", "3354288"),
-                    new Espectador(3, "Laura", "Antonia", "55668899"),
-                    new Espectador(4, "Luiza", "Maria", "6565659"),
-                    new Espectador(5, "Lucas", "Machado", "565685415"),
-                    new Espectador(6, "Pedro", "Alvares", "456454545"),
-                    new Espectador(7, "Paulo", "José", "9874512")
+                    new Espectador(1, "Dennis", "Ritchie", "33225555"),
+                    new Espectador(2, "Roberto", "Ierusalimschy", "3354288"),
+                    new Espectador(3, "Bjarn", "Straustrup", "55668899"),
+                    new Espectador(4, "Ada", "Lovelace", "6565659"),
+                    new Espectador(5, "Konrad", "Zuze", "565685415"),
+                    new Espectador(6, "Guido", "van Rossum", "456454545"),
+                    new Espectador(7, "Anders", "Hejlsberg", "9874512")
                 });
 
             builder.Entity<EspectadorCategoria>()

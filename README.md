@@ -44,6 +44,7 @@ SELECT COUNT(*) FROM EspectadoresFilmes WHERE FilmeId = X; /* onde x é o id do 
 /api/espectador/"id"
 
 /api/espectador/byName?nome=""&sobrenome="" //Nomes e Sobrenome com iniciais maiúsculas
+/api/espectador/byname?nome=Dennis&sobrenome=Ritchie
 
 /api/filme/
 

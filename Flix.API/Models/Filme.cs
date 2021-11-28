@@ -4,7 +4,6 @@ namespace Flix.API.Models
 {
     public class Filme
     {
-        public static int assistido = 0;
         public Filme() { }
         public Filme(int id, string nome)
         {
@@ -13,7 +12,6 @@ namespace Flix.API.Models
         }
         public int Id { get; set; }
         public string Nome { get; set; }
-
         public IEnumerable<Categoria> Categorias { get; set; }
     }
 }

@@ -1,7 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
+using Flix.API.Data;
 using Flix.API.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Flix.API.Controllers
 {
@@ -9,40 +11,33 @@ namespace Flix.API.Controllers
     [Route("api/[controller]")]
     public class EspectadorController : ControllerBase
     {
-        public List<Espectador> Espectadores = new List<Espectador>(){
-            new Espectador() {
-                Id = 1,
-                Nome = "Allan",
-                Sobrenome = "Abrahão",
-                Telefone = "65498745"
-            },
-            new Espectador() {
-                Id = 2,
-                Nome = "Contratante",
-                Sobrenome = "Oliveira",
-                Telefone = "987465123"
-            },
-            new Espectador() {
-                Id = 3,
-                Nome = "Concorrente",
-                Sobrenome = "da Silva",
-                Telefone = "231654987"
-            },
-        };
-        public EspectadorController() { }
+        private readonly FlixDataContext _context;
+        public readonly IRepository _repo;
+
+        public EspectadorController(FlixDataContext context, IRepository repo)
+        {
+            _repo = repo;
+            _context = context;
+        }
 
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(Espectadores);
+            return Ok(_context.Espectadores);
+        }
+
+        [HttpGet("pegaResposta")]
+        public IActionResult pegaResposta()
+        {
+            return Ok(_repo.pegaResposta());
         }
 
         //api/espectador/"id"
         [HttpGet("byId/{id}")]
         public IActionResult GetById(int id)
         {
-            var espectador = Espectadores.FirstOrDefault(e => e.Id == id);
-            if (espectador == null) return BadRequest("Espectador não foi encontrado");
+            var espectador = _context.Espectadores.FirstOrDefault(e => e.Id == id);
+            if (espectador == null) return BadRequest("Espectador não encontrado");
             return Ok(espectador);
         }
 
@@ -50,10 +45,10 @@ namespace Flix.API.Controllers
         [HttpGet("byName")]
         public IActionResult GetByName(string nome, string Sobrenome)
         {
-            var espectador = Espectadores.FirstOrDefault(e => 
+            var espectador = _context.Espectadores.FirstOrDefault(e =>
                 e.Nome.Contains(nome) && e.Sobrenome.Contains(Sobrenome)
             );
-            if (espectador == null) return BadRequest("Espectador não foi encontrado");
+            if (espectador == null) return BadRequest("Espectador não encontrado");
             return Ok(espectador);
         }
 
@@ -61,6 +56,8 @@ namespace Flix.API.Controllers
         [HttpPost]
         public IActionResult Post(Espectador espectador)
         {
+            _context.Add(espectador);
+            _context.SaveChanges();
             return Ok(espectador);
         }
 
@@ -68,12 +65,20 @@ namespace Flix.API.Controllers
         [HttpPut("{id}")]
         public IActionResult Put(int id, Espectador espectador)
         {
+            var espec = _context.Espectadores.AsNoTracking().FirstOrDefault(e => e.Id == id);
+            if (espec == null) return BadRequest("Espectador não encontrado");
+            _context.Update(espectador);
+            _context.SaveChanges();
             return Ok(espectador);
         }
 
         [HttpPatch("{id}")]
         public IActionResult Patch(int id, Espectador espectador)
         {
+            var espec = _context.Espectadores.AsNoTracking().FirstOrDefault(e => e.Id == id);
+            if (espec == null) return BadRequest("Espectador não encontrado");
+            _context.Update(espectador);
+            _context.SaveChanges();
             return Ok(espectador);
         }
 
@@ -81,8 +86,12 @@ namespace Flix.API.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
+            var espectador = _context.Espectadores.AsNoTracking().FirstOrDefault(e => e.Id == id);
+            if (espectador == null) return BadRequest("Espectador não encontrado");
+            _context.Remove(espectador);
+            _context.SaveChanges();
             return Ok();
         }
-        
+
     }
 }
