@@ -33,3 +33,5 @@ Frameworks :
 
 /api/espectador/byName?nome=""&sobrenome="" //Nomes e Sobrenome com iniciais maiúsculas
 
+/api/filme/
+

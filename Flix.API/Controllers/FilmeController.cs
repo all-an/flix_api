@@ -11,7 +11,7 @@ namespace Flix.API.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok("Filmes: A Procura da Felicidade (Will Smith), Contratei o Allan e Acertei, Indiquei o Allan e ele Agradeceu pra Sempre");
+            return Ok("Filmes: A Procura da Felicidade (Will Smith), Contratei o Allan e Acertei, Não Contratei o Allan e me Arrependi");
         }
     }
 }

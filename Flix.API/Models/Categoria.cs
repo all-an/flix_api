@@ -16,7 +16,7 @@ namespace Flix.API.Models
         public string Nome { get; set; }
         public int FilmeId { get; set; }
         public Filme Filme { get; set; }
-        public IEnumerable<EspectadorCategoria> EspectadoresCategorias { get; set; } 
+        public IEnumerable<EspectadorCategoria> EspectadorCategorias { get; set; } 
 
     }
 }

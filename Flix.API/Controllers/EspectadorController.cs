@@ -12,20 +12,20 @@ namespace Flix.API.Controllers
         public List<Espectador> Espectadores = new List<Espectador>(){
             new Espectador() {
                 Id = 1,
-                Nome = "Aroldo",
-                Sobrenome = "Almeida",
+                Nome = "Allan",
+                Sobrenome = "Abrahão",
                 Telefone = "65498745"
             },
             new Espectador() {
                 Id = 2,
-                Nome = "Sergio",
-                Sobrenome = "Brandao",
+                Nome = "Contratante",
+                Sobrenome = "Oliveira",
                 Telefone = "987465123"
             },
             new Espectador() {
                 Id = 3,
-                Nome = "Cassio",
-                Sobrenome = "Souza",
+                Nome = "Concorrente",
+                Sobrenome = "da Silva",
                 Telefone = "231654987"
             },
         };

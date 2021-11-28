@@ -18,6 +18,6 @@ namespace Flix.API.Models
         public string Sobrenome { get; set; }
         public string Telefone { get; set; }
 
-        public IEnumerable<EspectadorCategoria> EspectadoresCategorias { get; set; }
+        public IEnumerable<EspectadorCategoria> EspectadorCategorias { get; set; }
     }
 }
