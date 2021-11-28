@@ -24,6 +24,18 @@ Frameworks :
 ###
 ```
 
+## Como saber quantas vezes um filme foi assistido:
+### SQL
+```sql
+SELECT COUNT(*) FROM EspectadoresFilmes WHERE FilmeId = X; /* onde x é o id do filme*/
+```
+
+## Como saber quantos filmes um espectador assistiu:
+### SQL
+```sql
+SELECT COUNT(*) FROM EspectadoresFilmes WHERE FilmeId = X; /* onde x é o id do espectador*/
+```
+
 
 # Endpoints:
 
