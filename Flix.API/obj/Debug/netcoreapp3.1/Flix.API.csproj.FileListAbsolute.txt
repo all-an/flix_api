@@ -124,4 +124,4 @@ C:\Users\Public\flix_api\Flix.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore
 C:\Users\Public\flix_api\Flix.API\obj\Debug\netcoreapp3.1\Flix.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Public\flix_api\Flix.API\bin\Debug\netcoreapp3.1\Flix.API.xml
 C:\Users\Public\flix_api\Flix.API\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.json
-C:\Users\Public\flix_api\Flix.API\obj\Debug\netcoreapp3.1\Flix.API.csprojAssemblyReference.cache
+C:\Users\Public\flix_api\Flix.API\obj\Debug\netcoreapp3.1\Flix.API.csproj.AssemblyReference.cache

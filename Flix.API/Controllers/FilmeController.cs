@@ -18,13 +18,20 @@ namespace Flix.API.Controllers
             _context = context;
             _repo = repo;
         }
-
+        /// <summary>
+        /// Método usado para retornar todos os filmes
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Get()
         {
             return Ok(_context.Filmes);
         }
-
+        /// <summary>
+        /// Método usado para retornar cada filme por id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("byId/{id}")]
         public IActionResult GetById(int id)
         {
@@ -32,10 +39,13 @@ namespace Flix.API.Controllers
             if (filme == null) return BadRequest("Filme não encontrado");
             return Ok(filme);
         }
-
+        /// <summary>
+        /// Método usado para retornar cada filme por nome
+        /// </summary>
+        /// <returns></returns>
         //api/filme/"NomeMaiusculas"
         [HttpGet("byName")]
-        public IActionResult GetByName(string nome, string Sobrenome)
+        public IActionResult GetByName(string nome)
         {
             var filme = _context.Filmes.FirstOrDefault(e => 
                 e.Nome.Contains(nome)
@@ -43,7 +53,11 @@ namespace Flix.API.Controllers
             if (filme == null) return BadRequest("Filme não encontrado");
             return Ok(filme);
         }
-
+        /// <summary>
+        /// Método para incluir filmes
+        /// </summary>
+        /// <param name="filme"></param>
+        /// <returns></returns>
         //api/filme/post
         [HttpPost]
         public IActionResult Post(Filme filme)
@@ -56,7 +70,12 @@ namespace Flix.API.Controllers
 
             return BadRequest("Filme não Cadastrado");
         }
-
+        /// <summary>
+        /// Método para atualizar item
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="filme"></param>
+        /// <returns></returns>
         //api/filme/put
         [HttpPut("{id}")]
         public IActionResult Put(int id, Filme filme)
@@ -71,7 +90,12 @@ namespace Flix.API.Controllers
 
             return BadRequest("Filme não Cadastrado");
         }
-
+        /// <summary>
+        /// Método para fazer update
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="filme"></param>
+        /// <returns></returns>
         [HttpPatch("{id}")]
         public IActionResult Patch(int id, Filme filme)
         {
@@ -85,7 +109,11 @@ namespace Flix.API.Controllers
 
             return BadRequest("Filme não Atualizado");
         }
-
+        /// <summary>
+        /// Método para deleter filme
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         //api/filme/delete
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
