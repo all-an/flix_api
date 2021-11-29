@@ -23,7 +23,7 @@ Frameworks :
 ### Ler a lista de filmes cadastrados;
 ### Inserir novos espectadores; 
 ### Ler a lista de espectadores cadastrados;
-# Marcar que um espectador viu um filme específico;
+### Marcar que um espectador viu um filme específico;
 
 > /api/assistiu  (POST)
 
