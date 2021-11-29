@@ -80,7 +80,7 @@ public class Filme
     }
 ```
 
-## Classe que faz o link entre os dois objetos gerando o evento assistir
+## Classe responsável por unir Filmes e Espectadores gerando o evento Assistir
 ```cs
 public class EspectadorFilme
     {
