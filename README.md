@@ -19,25 +19,25 @@ Frameworks :
 ## Características
 
 - ...
-# Inserir novos filmes;
-# Ler a lista de filmes cadastrados;
-# Inserir novos espectadores;
-# Ler a lista de espectadores cadastrados;
+### Inserir novos filmes;
+### Ler a lista de filmes cadastrados;
+### Inserir novos espectadores; 
+### Ler a lista de espectadores cadastrados;
 # Marcar que um espectador viu um filme específico;
 
 > /api/assistiu  (POST)
 
-# Quantos espectadores um filme teve;
+### Quantos espectadores um filme teve;
 #### Pelo SQL através do Id do Filme
 ```sql
 SELECT COUNT(*) FROM EspectadoresFilmes WHERE FilmeId = X; /* onde x é o id do filme*/
 ```
-# Quantos filmes cada espectador viu;
+### Quantos filmes cada espectador viu;
 #### Pelo SQL através do Id do Espectador
 ```sql
 SELECT COUNT(*) FROM EspectadoresFilmes WHERE EspectadorId = X;
 
-```cs
+```.
 ###
 ```
 ## Classe responsável por criar o objeto Espectador
