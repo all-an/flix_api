@@ -11,9 +11,12 @@ namespace Flix.API.Controllers
     public class FilmeController : ControllerBase
     {
         private readonly FlixDataContext _context;
-        public FilmeController(FlixDataContext context) 
+        private readonly IRepository _repo;
+
+        public FilmeController(FlixDataContext context, IRepository repo) 
         { 
             _context = context;
+            _repo = repo;
         }
 
         [HttpGet]
@@ -26,7 +29,7 @@ namespace Flix.API.Controllers
         public IActionResult GetById(int id)
         {
             var filme = _context.Filmes.FirstOrDefault(e => e.Id == id);
-            if (filme == null) return BadRequest("filme não encontrado");
+            if (filme == null) return BadRequest("Filme não encontrado");
             return Ok(filme);
         }
 
@@ -37,7 +40,7 @@ namespace Flix.API.Controllers
             var filme = _context.Filmes.FirstOrDefault(e => 
                 e.Nome.Contains(nome)
             );
-            if (filme == null) return BadRequest("filme não encontrado");
+            if (filme == null) return BadRequest("Filme não encontrado");
             return Ok(filme);
         }
 
@@ -45,9 +48,13 @@ namespace Flix.API.Controllers
         [HttpPost]
         public IActionResult Post(Filme filme)
         {
-            _context.Add(filme);
-            _context.SaveChanges();
-            return Ok(filme);
+            _repo.Add(filme);
+            if(_repo.SaveChanges())
+            {
+                return Ok(filme);        
+            }
+
+            return BadRequest("Filme não Cadastrado");
         }
 
         //api/filme/put
@@ -56,9 +63,13 @@ namespace Flix.API.Controllers
         {
             var espec = _context.Filmes.AsNoTracking().FirstOrDefault(e => e.Id == id);
             if(espec == null) return BadRequest("Filme não encontrado");
-            _context.Update(filme);
-            _context.SaveChanges();
-            return Ok(filme);
+            _repo.Update(filme);
+            if(_repo.SaveChanges())
+            {
+                return Ok(filme);        
+            }
+
+            return BadRequest("Filme não Cadastrado");
         }
 
         [HttpPatch("{id}")]
@@ -66,9 +77,13 @@ namespace Flix.API.Controllers
         {
             var espec = _context.Filmes.AsNoTracking().FirstOrDefault(e => e.Id == id);
             if(espec == null) return BadRequest("Filme não encontrado");
-            _context.Update(filme);
-            _context.SaveChanges();
-            return Ok(filme);
+            _repo.Update(filme);
+            if(_repo.SaveChanges())
+            {
+                return Ok(filme);        
+            }
+
+            return BadRequest("Filme não Atualizado");
         }
 
         //api/filme/delete
@@ -77,9 +92,13 @@ namespace Flix.API.Controllers
         {
             var filme = _context.Filmes.AsNoTracking().FirstOrDefault(e => e.Id == id);
             if(filme == null) return BadRequest("Filme não encontrado");
-            _context.Remove(filme);
-            _context.SaveChanges();
-            return Ok();
+            _repo.Delete(filme);
+            if(_repo.SaveChanges())
+            {
+                return Ok("Filme Deletado");        
+            }
+
+            return BadRequest("Filme não Cadastrado");
         }
     }
 }

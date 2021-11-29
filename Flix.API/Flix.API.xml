@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Flix.API</name>
+    </assembly>
+    <members>
+        <member name="M:Flix.API.Controllers.AssistiuController.Details(System.Int32)">
+            <summary>
+            Método usado para retornar todos os eventos de assistir
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Flix.API.Controllers.AssistiuController.Post(Flix.API.Models.EspectadorFilme)">
+            <summary>
+            Método usado para incluir evento de assistir
+            </summary>
+            <param name="filme"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Flix.API.Controllers.EspectadorController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Flix.API.Controllers.EspectadorController.#ctor(Flix.API.Data.FlixDataContext,Flix.API.Data.IRepository)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <param name="repo"></param>
+        </member>
+        <member name="M:Flix.API.Controllers.EspectadorController.Get">
+            <summary>
+            Método usado para retornar todos os espectadores
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Flix.API.Controllers.EspectadorController.GetById(System.Int32)">
+            <summary>
+            Método usado para retornar cada espectador por id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Flix.API.Controllers.EspectadorController.GetByName(System.String,System.String)">
+            <summary>
+            Método usado para retornar cada espectador por nome.
+            </summary>
+            <param name="nome"></param>
+            <param name="Sobrenome"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Flix.API.Controllers.EspectadorController.Post(Flix.API.Models.Espectador)">
+            <summary>
+            Método usado para cadastrar espectador.
+            </summary>
+            <param name="espectador"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Flix.API.Controllers.EspectadorController.Put(System.Int32,Flix.API.Models.Espectador)">
+            <summary>
+            Método usado para atualizar dado de espectador
+            </summary>
+            <param name="id"></param>
+            <param name="espectador"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Flix.API.Controllers.EspectadorController.Patch(System.Int32,Flix.API.Models.Espectador)">
+            <summary>
+            Método usado para atualizar uma parte dos dados de um espectador
+            </summary>
+            <param name="id"></param>
+            <param name="espectador"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Flix.API.Controllers.EspectadorController.Delete(System.Int32)">
+            <summary>
+            Método usado para remover espectador
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
