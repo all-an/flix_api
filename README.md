@@ -3,11 +3,24 @@
 ### Sistema de controle de filmes, espectadores e visualizações.
 ## _"talk is cheap, show me the code" (Torvalds)_
 
-### Utilizando Entity Framework Core, C#, SQL e Docker para fazer o sistema.
+### Utilizando Entity Framework Core, C#e e SQLite para fazer o sistema.
 
 > Note: `Para rodar o sistema somente clone e build no Visual Studio ou VSCode` 
 
 > dotnet run 
+
+### Link de acesso ao Banco de Dados
+
+[Banco de Dados SQLite](ttps://extendshclass.com/sqlite/e61faf1)
+
+> https://extendsclass.com/sqlite/e61faf1
+
+### Link de um Video breve explicando a API
+
+[Video explicativo](https://www.youtube.com/watch?v=9TDEIPsj7lg)
+
+> https://www.youtube.com/watch?v=9TDEIPsj7lg
+
 
 Frameworks :
 
@@ -18,22 +31,18 @@ Frameworks :
 
 ## Características
 
-- ...
 ### Inserir novos filmes;
 ### Ler a lista de filmes cadastrados;
 ### Inserir novos espectadores; 
 ### Ler a lista de espectadores cadastrados;
 ### Marcar que um espectador viu um filme específico;
-
-> /api/assistiu  (POST)
-
 ### Quantos espectadores um filme teve;
-#### Pelo SQL através do Id do Filme
+#### Pelo SQL através com o Id do Filme
 ```sql
 SELECT COUNT(*) FROM EspectadoresFilmes WHERE FilmeId = X; /* onde x é o id do filme*/
 ```
 ### Quantos filmes cada espectador viu;
-#### Pelo SQL através do Id do Espectador
+#### Pelo SQL através com o Id do Espectador
 ```sql
 SELECT COUNT(*) FROM EspectadoresFilmes WHERE EspectadorId = X;
 
@@ -225,4 +234,6 @@ SELECT COUNT(*) FROM EspectadoresFilmes WHERE EspectadorId = X; /* onde x é o i
 /api/espectador/byname?nome=Dennis&sobrenome=Ritchie
 
 /api/filme/
+
+> /api/assistiu  (POST)
 
