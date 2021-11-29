@@ -5,7 +5,7 @@
 
 ### Utilizando Entity Framework Core, C#, SQL e Docker para fazer o sistema.
 
-> Note: `Para rodar o sistema somente clone e rode no Visual Studio Code` 
+> Note: `Para rodar o sistema somente clone e build no Visual Studio ou VSCode` 
 
 > dotnet run 
 

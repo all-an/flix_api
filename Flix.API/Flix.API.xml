@@ -4,11 +4,10 @@
         <name>Flix.API</name>
     </assembly>
     <members>
-        <member name="M:Flix.API.Controllers.AssistiuController.Details(System.Int32)">
+        <member name="M:Flix.API.Controllers.AssistiuController.Index">
             <summary>
-            Método usado para retornar todos os eventos de assistir
+            Método usado para rertornar todas os Eventos de Assistir
             </summary>
-            <param name="id"></param>
             <returns></returns>
         </member>
         <member name="M:Flix.API.Controllers.AssistiuController.Post(Flix.API.Models.EspectadorFilme)">

@@ -35,6 +35,24 @@ namespace Flix.API.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "EspectadoresFilmes",
+                columns: table => new
+                {
+                    EspectadorId = table.Column<int>(nullable: false),
+                    FilmeId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_EspectadoresFilmes", x => new { x.EspectadorId, x.FilmeId });
+                    table.ForeignKey(
+                        name: "FK_EspectadoresFilmes_Espectadores_EspectadorId",
+                        column: x => x.EspectadorId,
+                        principalTable: "Espectadores",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Categorias",
                 columns: table => new
                 {
@@ -48,31 +66,6 @@ namespace Flix.API.Migrations
                     table.PrimaryKey("PK_Categorias", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Categorias_Filmes_FilmeId",
-                        column: x => x.FilmeId,
-                        principalTable: "Filmes",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "EspectadoresFilmes",
-                columns: table => new
-                {
-                    EspectadorId = table.Column<int>(nullable: false),
-                    FilmeId = table.Column<int>(nullable: false),
-                    Id = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_EspectadoresFilmes", x => new { x.EspectadorId, x.FilmeId });
-                    table.ForeignKey(
-                        name: "FK_EspectadoresFilmes_Espectadores_EspectadorId",
-                        column: x => x.EspectadorId,
-                        principalTable: "Espectadores",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_EspectadoresFilmes_Filmes_FilmeId",
                         column: x => x.FilmeId,
                         principalTable: "Filmes",
                         principalColumn: "Id",
@@ -166,12 +159,12 @@ namespace Flix.API.Migrations
             migrationBuilder.InsertData(
                 table: "Categorias",
                 columns: new[] { "Id", "FilmeId", "Nome" },
-                values: new object[] { 1, 1, "Ação" });
+                values: new object[] { 5, 5, "Comédia" });
 
             migrationBuilder.InsertData(
                 table: "Categorias",
                 columns: new[] { "Id", "FilmeId", "Nome" },
-                values: new object[] { 5, 5, "Comédia" });
+                values: new object[] { 3, 3, "Horror" });
 
             migrationBuilder.InsertData(
                 table: "Categorias",
@@ -181,122 +174,122 @@ namespace Flix.API.Migrations
             migrationBuilder.InsertData(
                 table: "Categorias",
                 columns: new[] { "Id", "FilmeId", "Nome" },
-                values: new object[] { 4, 4, "Drama" });
+                values: new object[] { 1, 1, "Ação" });
 
             migrationBuilder.InsertData(
                 table: "Categorias",
                 columns: new[] { "Id", "FilmeId", "Nome" },
-                values: new object[] { 3, 3, "Horror" });
+                values: new object[] { 4, 4, "Drama" });
 
             migrationBuilder.InsertData(
                 table: "EspectadoresFilmes",
-                columns: new[] { "EspectadorId", "FilmeId", "Id" },
-                values: new object[] { 2, 5, 0 });
+                columns: new[] { "EspectadorId", "FilmeId" },
+                values: new object[] { 7, 5 });
 
             migrationBuilder.InsertData(
                 table: "EspectadoresFilmes",
-                columns: new[] { "EspectadorId", "FilmeId", "Id" },
-                values: new object[] { 1, 5, 0 });
+                columns: new[] { "EspectadorId", "FilmeId" },
+                values: new object[] { 7, 4 });
 
             migrationBuilder.InsertData(
                 table: "EspectadoresFilmes",
-                columns: new[] { "EspectadorId", "FilmeId", "Id" },
-                values: new object[] { 7, 4, 0 });
+                columns: new[] { "EspectadorId", "FilmeId" },
+                values: new object[] { 7, 3 });
 
             migrationBuilder.InsertData(
                 table: "EspectadoresFilmes",
-                columns: new[] { "EspectadorId", "FilmeId", "Id" },
-                values: new object[] { 6, 4, 0 });
+                columns: new[] { "EspectadorId", "FilmeId" },
+                values: new object[] { 7, 2 });
 
             migrationBuilder.InsertData(
                 table: "EspectadoresFilmes",
-                columns: new[] { "EspectadorId", "FilmeId", "Id" },
-                values: new object[] { 5, 4, 0 });
+                columns: new[] { "EspectadorId", "FilmeId" },
+                values: new object[] { 7, 1 });
 
             migrationBuilder.InsertData(
                 table: "EspectadoresFilmes",
-                columns: new[] { "EspectadorId", "FilmeId", "Id" },
-                values: new object[] { 4, 4, 0 });
+                columns: new[] { "EspectadorId", "FilmeId" },
+                values: new object[] { 6, 4 });
 
             migrationBuilder.InsertData(
                 table: "EspectadoresFilmes",
-                columns: new[] { "EspectadorId", "FilmeId", "Id" },
-                values: new object[] { 7, 3, 0 });
+                columns: new[] { "EspectadorId", "FilmeId" },
+                values: new object[] { 6, 2 });
 
             migrationBuilder.InsertData(
                 table: "EspectadoresFilmes",
-                columns: new[] { "EspectadorId", "FilmeId", "Id" },
-                values: new object[] { 1, 3, 0 });
+                columns: new[] { "EspectadorId", "FilmeId" },
+                values: new object[] { 6, 1 });
 
             migrationBuilder.InsertData(
                 table: "EspectadoresFilmes",
-                columns: new[] { "EspectadorId", "FilmeId", "Id" },
-                values: new object[] { 6, 3, 0 });
+                columns: new[] { "EspectadorId", "FilmeId" },
+                values: new object[] { 6, 3 });
 
             migrationBuilder.InsertData(
                 table: "EspectadoresFilmes",
-                columns: new[] { "EspectadorId", "FilmeId", "Id" },
-                values: new object[] { 3, 3, 0 });
+                columns: new[] { "EspectadorId", "FilmeId" },
+                values: new object[] { 5, 4 });
 
             migrationBuilder.InsertData(
                 table: "EspectadoresFilmes",
-                columns: new[] { "EspectadorId", "FilmeId", "Id" },
-                values: new object[] { 7, 2, 0 });
+                columns: new[] { "EspectadorId", "FilmeId" },
+                values: new object[] { 4, 4 });
 
             migrationBuilder.InsertData(
                 table: "EspectadoresFilmes",
-                columns: new[] { "EspectadorId", "FilmeId", "Id" },
-                values: new object[] { 6, 2, 0 });
+                columns: new[] { "EspectadorId", "FilmeId" },
+                values: new object[] { 4, 1 });
 
             migrationBuilder.InsertData(
                 table: "EspectadoresFilmes",
-                columns: new[] { "EspectadorId", "FilmeId", "Id" },
-                values: new object[] { 3, 2, 0 });
+                columns: new[] { "EspectadorId", "FilmeId" },
+                values: new object[] { 3, 2 });
 
             migrationBuilder.InsertData(
                 table: "EspectadoresFilmes",
-                columns: new[] { "EspectadorId", "FilmeId", "Id" },
-                values: new object[] { 2, 2, 0 });
+                columns: new[] { "EspectadorId", "FilmeId" },
+                values: new object[] { 3, 1 });
 
             migrationBuilder.InsertData(
                 table: "EspectadoresFilmes",
-                columns: new[] { "EspectadorId", "FilmeId", "Id" },
-                values: new object[] { 7, 1, 0 });
+                columns: new[] { "EspectadorId", "FilmeId" },
+                values: new object[] { 3, 3 });
 
             migrationBuilder.InsertData(
                 table: "EspectadoresFilmes",
-                columns: new[] { "EspectadorId", "FilmeId", "Id" },
-                values: new object[] { 6, 1, 0 });
+                columns: new[] { "EspectadorId", "FilmeId" },
+                values: new object[] { 2, 5 });
 
             migrationBuilder.InsertData(
                 table: "EspectadoresFilmes",
-                columns: new[] { "EspectadorId", "FilmeId", "Id" },
-                values: new object[] { 4, 1, 0 });
+                columns: new[] { "EspectadorId", "FilmeId" },
+                values: new object[] { 2, 2 });
 
             migrationBuilder.InsertData(
                 table: "EspectadoresFilmes",
-                columns: new[] { "EspectadorId", "FilmeId", "Id" },
-                values: new object[] { 3, 1, 0 });
+                columns: new[] { "EspectadorId", "FilmeId" },
+                values: new object[] { 2, 1 });
 
             migrationBuilder.InsertData(
                 table: "EspectadoresFilmes",
-                columns: new[] { "EspectadorId", "FilmeId", "Id" },
-                values: new object[] { 2, 1, 0 });
+                columns: new[] { "EspectadorId", "FilmeId" },
+                values: new object[] { 1, 5 });
 
             migrationBuilder.InsertData(
                 table: "EspectadoresFilmes",
-                columns: new[] { "EspectadorId", "FilmeId", "Id" },
-                values: new object[] { 1, 1, 0 });
+                columns: new[] { "EspectadorId", "FilmeId" },
+                values: new object[] { 1, 3 });
 
             migrationBuilder.InsertData(
                 table: "EspectadoresFilmes",
-                columns: new[] { "EspectadorId", "FilmeId", "Id" },
-                values: new object[] { 5, 5, 0 });
+                columns: new[] { "EspectadorId", "FilmeId" },
+                values: new object[] { 5, 5 });
 
             migrationBuilder.InsertData(
                 table: "EspectadoresFilmes",
-                columns: new[] { "EspectadorId", "FilmeId", "Id" },
-                values: new object[] { 7, 5, 0 });
+                columns: new[] { "EspectadorId", "FilmeId" },
+                values: new object[] { 1, 1 });
 
             migrationBuilder.InsertData(
                 table: "EspectadorCategorias",
@@ -422,11 +415,6 @@ namespace Flix.API.Migrations
                 name: "IX_EspectadorCategorias_CategoriaId",
                 table: "EspectadorCategorias",
                 column: "CategoriaId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_EspectadoresFilmes_FilmeId",
-                table: "EspectadoresFilmes",
-                column: "FilmeId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

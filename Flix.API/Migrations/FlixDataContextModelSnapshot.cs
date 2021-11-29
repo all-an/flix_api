@@ -277,12 +277,7 @@ namespace Flix.API.Migrations
                     b.Property<int>("FilmeId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Id")
-                        .HasColumnType("INTEGER");
-
                     b.HasKey("EspectadorId", "FilmeId");
-
-                    b.HasIndex("FilmeId");
 
                     b.ToTable("EspectadoresFilmes");
 
@@ -290,134 +285,112 @@ namespace Flix.API.Migrations
                         new
                         {
                             EspectadorId = 3,
-                            FilmeId = 3,
-                            Id = 0
+                            FilmeId = 3
                         },
                         new
                         {
                             EspectadorId = 6,
-                            FilmeId = 3,
-                            Id = 0
+                            FilmeId = 3
                         },
                         new
                         {
                             EspectadorId = 1,
-                            FilmeId = 1,
-                            Id = 0
+                            FilmeId = 1
                         },
                         new
                         {
                             EspectadorId = 1,
-                            FilmeId = 3,
-                            Id = 0
+                            FilmeId = 3
                         },
                         new
                         {
                             EspectadorId = 1,
-                            FilmeId = 5,
-                            Id = 0
+                            FilmeId = 5
                         },
                         new
                         {
                             EspectadorId = 2,
-                            FilmeId = 1,
-                            Id = 0
+                            FilmeId = 1
                         },
                         new
                         {
                             EspectadorId = 2,
-                            FilmeId = 2,
-                            Id = 0
+                            FilmeId = 2
                         },
                         new
                         {
                             EspectadorId = 2,
-                            FilmeId = 5,
-                            Id = 0
+                            FilmeId = 5
                         },
                         new
                         {
                             EspectadorId = 3,
-                            FilmeId = 1,
-                            Id = 0
+                            FilmeId = 1
                         },
                         new
                         {
                             EspectadorId = 3,
-                            FilmeId = 2,
-                            Id = 0
+                            FilmeId = 2
                         },
                         new
                         {
                             EspectadorId = 4,
-                            FilmeId = 1,
-                            Id = 0
+                            FilmeId = 1
                         },
                         new
                         {
                             EspectadorId = 4,
-                            FilmeId = 4,
-                            Id = 0
+                            FilmeId = 4
                         },
                         new
                         {
                             EspectadorId = 5,
-                            FilmeId = 4,
-                            Id = 0
+                            FilmeId = 4
                         },
                         new
                         {
                             EspectadorId = 5,
-                            FilmeId = 5,
-                            Id = 0
+                            FilmeId = 5
                         },
                         new
                         {
                             EspectadorId = 6,
-                            FilmeId = 1,
-                            Id = 0
+                            FilmeId = 1
                         },
                         new
                         {
                             EspectadorId = 6,
-                            FilmeId = 2,
-                            Id = 0
+                            FilmeId = 2
                         },
                         new
                         {
                             EspectadorId = 6,
-                            FilmeId = 4,
-                            Id = 0
+                            FilmeId = 4
                         },
                         new
                         {
                             EspectadorId = 7,
-                            FilmeId = 1,
-                            Id = 0
+                            FilmeId = 1
                         },
                         new
                         {
                             EspectadorId = 7,
-                            FilmeId = 2,
-                            Id = 0
+                            FilmeId = 2
                         },
                         new
                         {
                             EspectadorId = 7,
-                            FilmeId = 3,
-                            Id = 0
+                            FilmeId = 3
                         },
                         new
                         {
                             EspectadorId = 7,
-                            FilmeId = 4,
-                            Id = 0
+                            FilmeId = 4
                         },
                         new
                         {
                             EspectadorId = 7,
-                            FilmeId = 5,
-                            Id = 0
+                            FilmeId = 5
                         });
                 });
 
@@ -488,15 +461,9 @@ namespace Flix.API.Migrations
 
             modelBuilder.Entity("Flix.API.Models.EspectadorFilme", b =>
                 {
-                    b.HasOne("Flix.API.Models.Espectador", "Espectador")
+                    b.HasOne("Flix.API.Models.Espectador", null)
                         .WithMany("EspectadoresFilmes")
                         .HasForeignKey("EspectadorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Flix.API.Models.Filme", "Filme")
-                        .WithMany()
-                        .HasForeignKey("FilmeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

@@ -22,25 +22,16 @@ namespace Flix.API.Controllers
             _context = context;
             _repo = repo;
         }
+
+        /// <summary>
+        /// Método usado para rertornar todas os Eventos de Assistir
+        /// </summary>
+        /// <returns></returns>
         // GET: AssistiuController
         [HttpGet]
         public ActionResult Index()
         {
             return Ok(_context.EspectadoresFilmes);
-        }
-
-        /// <summary>
-        /// Método usado para retornar todos os eventos de assistir
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        // GET: AssistiuController
-        [HttpGet("byId/{id}")]
-        public ActionResult Details(int id)
-        {
-            var assistiu = _context.EspectadoresFilmes.FirstOrDefault(e => e.Id == id);
-            if (assistiu == null) return BadRequest("Evento de Assistir não encontrado");
-            return Ok(assistiu);
         }
 
         /// <summary>
