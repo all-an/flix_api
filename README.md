@@ -11,7 +11,7 @@
 
 ### Link de acesso ao Banco de Dados
 
-[Banco de Dados SQLite](ttps://extendshclass.com/sqlite/e61faf1)
+[Banco de Dados SQLite](https://extendshclass.com/sqlite/e61faf1)
 
 > https://extendsclass.com/sqlite/e61faf1
 
